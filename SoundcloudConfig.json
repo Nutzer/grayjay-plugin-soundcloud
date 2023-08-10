@@ -1,0 +1,23 @@
+{
+    "name": "SoundCloud",
+    "description": "One of the biggest music distribution platforms, Privately owned",
+    "author": "FUTO",
+    "authorUrl": "https://futo.org",
+    "sourceUrl": "https://autoupdate.unkto.com/sources/Soundcloud/SoundcloudConfig.json",
+    "repositoryUrl": "https://futo.org",
+    "scriptUrl": "./SoundcloudScript.js",
+    "version": 7,
+    "iconUrl": "./soundcloud.png",
+    "id": "5fb74e28-2fba-406a-9418-38af04f63c08",
+    "scriptSignature": "",
+    "scriptPublicKey": "",
+    "packages": ["Http"],
+    "allowEval": false,
+    "allowUrls": ["api-v2.soundcloud.com", "soundcloud.com", "a-v2.sndcdn.com"],
+    "authentication": {
+        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.3",
+        "loginUrl": "https://soundcloud.com/signin",
+        "headersToFind": ["Authorization"],
+        "cookiesToFind": ["oauth_token"]
+    }
+}
