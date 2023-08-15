@@ -2,6 +2,7 @@
 const API_URL = 'https://api-v2.soundcloud.com/'
 const APP_LOCALE = 'en'
 const PLATFORM = 'Soundcloud'
+const PLATFORM_CLAIMTYPE = 17;
 const SOUNDCLOUD_APP_VERSION = '1686222762'
 const USER_AGENT_DESKTOP = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
 const USER_AGENT_MOBILE = 'Mozilla/5.0 (Linux; Android 10; Pixel 6a) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
@@ -532,7 +533,7 @@ class ExtendableCommentPager extends CommentPager {
             return new Comment({
                 contextUrl: context.url,
                 author: new PlatformAuthorLink(
-                    new PlatformID(PLATFORM, comment.user.id.toString(), config.id),
+                    new PlatformID(PLATFORM, comment.user.id.toString(), config.id, PLATFORM_CLAIMTYPE),
                     comment.user.username,
                     comment.user.permalink_url,
                     comment.user.avatar_url
@@ -562,7 +563,7 @@ class ExtendableCommentPager extends CommentPager {
  */
 function soundcloudUserToPlatformChannel(scu) {
     return new PlatformChannel({
-        id: new PlatformID(PLATFORM, scu.id.toString(), config.id),
+        id: new PlatformID(PLATFORM, scu.id.toString(), config.id, PLATFORM_CLAIMTYPE),
         name: scu.username,
         thumbnail: scu.avatar_url,
         banner: scu?.visuals?.visuals.length > 0 ? scu.visuals.visuals[0].visual_url : '',
@@ -584,7 +585,7 @@ function soundcloudTrackToPlatformVideo(sct) {
         name: sct.title,
         thumbnails: new Thumbnails([new Thumbnail(sct.artwork_url !== null ? sct.artwork_url.replace('large', 't500x500') : sct.artwork_url, 0)]),
         author: new PlatformAuthorLink(
-            new PlatformID(PLATFORM, sct.user_id.toString(), config.id),
+            new PlatformID(PLATFORM, sct.user_id.toString(), config.id, PLATFORM_CLAIMTYPE),
             sct.user.username,
             sct.user.permalink_url,
             sct.user.avatar_url

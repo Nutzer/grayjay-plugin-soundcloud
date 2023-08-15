@@ -6,7 +6,7 @@
     "sourceUrl": "https://autoupdate.unkto.com/sources/Soundcloud/SoundcloudConfig.json",
     "repositoryUrl": "https://futo.org",
     "scriptUrl": "./SoundcloudScript.js",
-    "version": 7,
+    "version": 8,
     "iconUrl": "./soundcloud.png",
     "id": "5fb74e28-2fba-406a-9418-38af04f63c08",
     "scriptSignature": "",
@@ -19,5 +19,6 @@
         "loginUrl": "https://soundcloud.com/signin",
         "headersToFind": ["Authorization"],
         "cookiesToFind": ["oauth_token"]
-    }
+    },
+    "supportedClaimTypes": [17]
 }
