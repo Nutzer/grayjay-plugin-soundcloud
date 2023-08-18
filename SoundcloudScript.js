@@ -2,10 +2,12 @@
 const API_URL = 'https://api-v2.soundcloud.com/'
 const APP_LOCALE = 'en'
 const PLATFORM = 'Soundcloud'
-const PLATFORM_CLAIMTYPE = 17;
+const PLATFORM_CLAIMTYPE = 16;
 const SOUNDCLOUD_APP_VERSION = '1686222762'
 const USER_AGENT_DESKTOP = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
 const USER_AGENT_MOBILE = 'Mozilla/5.0 (Linux; Android 10; Pixel 6a) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
+
+const URL_BASE = "https://soundcloud.com";
 
 let CLIENT_ID = 'iZIs9mchVcX5lhVRyQGGAYlNPVldzAoX' // correct as of June 2023, enable changes this to get the latest
 const URL_ADDITIVE = `&app_version=${SOUNDCLOUD_APP_VERSION}&app_locale=${APP_LOCALE}`
@@ -89,6 +91,18 @@ source.getChannel = function (url) {
 source.getChannelContents = function (url) {
     return new ChannelVideoPager({ url: url, page_size: 20, offset_date: 0 })
 }
+
+
+source.getChannelTemplateByClaimMap = () => {
+    return {
+        //SoundCloud
+        17: {
+            0: URL_BASE + "/{{CLAIMVALUE}}"
+        }
+    };
+};
+
+
 source.isContentDetailsUrl = function (url) {
     // https://soundcloud.com/toosii2x/toosii-favorite-song
     return /soundcloud\.com\/[a-zA-Z0-9-_]+\/[a-zA-Z0-9-_]+/.test(url)
