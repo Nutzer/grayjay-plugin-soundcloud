@@ -98,6 +98,7 @@ source.getChannelTemplateByClaimMap = () => {
         //SoundCloud
         17: {
             0: URL_BASE + "/{{CLAIMVALUE}}"
+            //Unused! 1: https://api.soundcloud.com/users/{{CLAIMVALUE}}
         }
     };
 };
