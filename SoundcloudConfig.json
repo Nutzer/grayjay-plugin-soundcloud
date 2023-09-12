@@ -3,7 +3,7 @@
     "description": "One of the biggest music distribution platforms, Privately owned",
     "author": "FUTO",
     "authorUrl": "https://futo.org",
-    "sourceUrl": "https://autoupdate.unkto.com/sources/Soundcloud/SoundcloudConfig.json",
+    "sourceUrl": "https://plugins.grayjay.app/Soundcloud/SoundcloudConfig.json",
     "repositoryUrl": "https://futo.org",
     "scriptUrl": "./SoundcloudScript.js",
     "version": 9,
