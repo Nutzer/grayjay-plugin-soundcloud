@@ -7,7 +7,7 @@ touch $DOCUMENT_ROOT/maintenance.file
 
 # Swap over the content
 echo "Deploying content..."
-mkdir -p Soundcloud
+mkdir -p $DOCUMENT_ROOT/Soundcloud
 cp soundcloud.png $DOCUMENT_ROOT/Soundcloud
 cp SoundcloudConfig.json $DOCUMENT_ROOT/Soundcloud
 cp SoundcloudScript.js $DOCUMENT_ROOT/Soundcloud
