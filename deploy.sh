@@ -7,9 +7,10 @@ touch $DOCUMENT_ROOT/maintenance.file
 
 # Swap over the content
 echo "Deploying content..."
-cp soundcloud.png $DOCUMENT_ROOT/
-cp SoundcloudConfig.json $DOCUMENT_ROOT/
-cp SoundcloudScript.js $DOCUMENT_ROOT/
+mkdir -p Soundcloud
+cp soundcloud.png $DOCUMENT_ROOT/Soundcloud
+cp SoundcloudConfig.json $DOCUMENT_ROOT/Soundcloud
+cp SoundcloudScript.js $DOCUMENT_ROOT/Soundcloud
 
 # Notify Cloudflare to wipe the CDN cache
 echo "Purging Cloudflare cache..."
