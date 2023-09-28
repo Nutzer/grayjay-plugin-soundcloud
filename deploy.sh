@@ -11,6 +11,7 @@ mkdir -p $DOCUMENT_ROOT/Soundcloud
 cp soundcloud.png $DOCUMENT_ROOT/Soundcloud
 cp SoundcloudConfig.json $DOCUMENT_ROOT/Soundcloud
 cp SoundcloudScript.js $DOCUMENT_ROOT/Soundcloud
+sh sign.sh $DOCUMENT_ROOT/Soundcloud/SoundcloudScript.js $DOCUMENT_ROOT/Soundcloud/SoundcloudConfig.json
 
 # Notify Cloudflare to wipe the CDN cache
 echo "Purging Cloudflare cache for zone $CLOUDFLARE_ZONE_ID..."
