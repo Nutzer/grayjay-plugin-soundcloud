@@ -585,7 +585,7 @@ function soundcloudUserToPlatformChannel(scu) {
         subscribers: scu.followers_count,
         description: scu.description,
         url: scu.permalink_url,
-        links: scu.visuals ? scu.visuals.visuals.map((v) => v.link) : [],
+        links: scu.visuals ? scu.visuals.visuals.filter((v) => v.link).map((v) => v.link) : [],
     })
 }
 
